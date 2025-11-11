@@ -1,8 +1,10 @@
+from django.shortcuts import redirect
 from django.urls import path
 from . import views
 
 urlpatterns = [
     path('home/', views.home, name='home'),
+    path('', lambda request: redirect('home')),  # redirects root (/) to /home/
 
     path('about/', views.about, name='about'),
 
